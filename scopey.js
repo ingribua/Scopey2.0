@@ -5,6 +5,21 @@ const errorMsg    = document.getElementById('form-error');
 const textarea    = document.getElementById('f-melding');
 const wordCounter = document.getElementById('word-counter');
 
+
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    toggle.classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.classList.remove('open');
+    });
+  });
+
+
 const MAX_WORDS = 2000;
 
 /* ── Word counter ─────────────────────────────────── */

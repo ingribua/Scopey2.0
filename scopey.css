@@ -418,4 +418,82 @@ footer img {
   display: block;
 }
 
+/* Hamburger knapp */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--neutral-900);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Tablet (max 900px) */
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--brand-50);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 16px 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 14px 40px;
+    border-bottom: 1px solid var(--neutral-100);
+  }
+  .nav-links li:last-child a { border-bottom: none; }
+
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .img-placeholder-hero { height: 220px; }
+  h1 { font-size: 36px; line-height: 44px; }
+
+  .steps-grid { grid-template-columns: 1fr; gap: 16px; }
+  .step-arrow { transform: rotate(90deg); padding: 0; }
+
+  .why-grid { grid-template-columns: 1fr; gap: 40px; }
+  .why-item h3 { min-height: auto; }
+
+  .about-inner { grid-template-columns: 1fr; gap: 32px; }
+  .form-row-4 { grid-template-columns: 1fr 1fr; }
+  .container { padding: 0 24px; }
+}
+
+/* Mobil (max 600px) */
+@media (max-width: 600px) {
+  h1 { font-size: 28px; line-height: 36px; }
+  h2 { font-size: 24px; line-height: 32px; }
+
+  .hero, .section-product,
+  .section-about, .section-why,
+  .section-contact { padding: 48px 0; }
+
+  .form-row-4 { grid-template-columns: 1fr; }
+  .container { padding: 0 16px; }
+  footer { padding: 24px 16px; }
+}
+
 
