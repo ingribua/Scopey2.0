@@ -199,16 +199,8 @@ nav {
 .hero-text h1 { margin-bottom: 20px; }
 .hero-text p  { margin-bottom: 32px; color: var(--neutral-900); max-width: 400px; }
 
-.img-placeholder {
-  background: repeating-linear-gradient(
-    45deg,
-    #d5d5d5 0px, #d5d5d5 1px,
-    #efefef 1px, #efefef 12px
-  );
-  border-radius: 8px;
-}
-.img-placeholder-hero  { height: 280px; }
-.img-placeholder-about { height: 100%; min-height: 320px; }
+
+.img-about-us { height: 50%; min-height: 100px; }
 
 /* ─── PRODUCT SECTION ───────────────────────────── */
 .section-product {
