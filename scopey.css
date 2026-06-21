@@ -200,7 +200,16 @@ nav {
 .hero-text p  { margin-bottom: 32px; color: var(--neutral-900); max-width: 400px; }
 
 
-.img-about-us { height: 50%; min-height: 100px; }
+.img-about-us {
+    width: 100%;
+    max-width: 300px; /* mindre bilde */
+    height: auto;
+}
+
+.us-img {
+    display: flex;
+    justify-content: center;
+}
 
 /* ─── PRODUCT SECTION ───────────────────────────── */
 .section-product {
