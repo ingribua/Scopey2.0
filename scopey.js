@@ -8,6 +8,24 @@ const wordCounter = document.getElementById('word-counter');
 const MAX_WORDS = 2000;
 let isSubmitting = false;
 
+/* ── Theme toggle ─────────────────────────────────── */
+const themeToggle = document.getElementById('theme-toggle');
+
+if (themeToggle) {
+  themeToggle.setAttribute('aria-pressed', String(document.documentElement.getAttribute('data-theme') === 'dark'));
+
+  themeToggle.addEventListener('click', () => {
+    const root = document.documentElement;
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+
+    root.setAttribute('data-theme', next);
+    themeToggle.setAttribute('aria-pressed', String(!isDark));
+
+    try { localStorage.setItem('scopey-theme', next); } catch (e) { /* ignore */ }
+  });
+}
+
 /* ── Nav toggle ───────────────────────────────────── */
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
